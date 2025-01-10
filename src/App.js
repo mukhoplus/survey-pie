@@ -8,7 +8,7 @@ import SurveyPage from './pages/SurveyPage';
 function App() {
   return (
     <Routes>
-      <Route path="/survey/:surveyId/:step" element={<SurveyPage />}>
+      <Route path="/survey/:surveyId/" element={<SurveyPage />}>
         <Route path=":step" />
       </Route>
       <Route path="/done" element={<CompletionPage />} />
