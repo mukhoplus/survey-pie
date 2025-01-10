@@ -2,7 +2,7 @@ import SelectInput from '../SelectInput';
 import TextareaInput from '../TextareaInput';
 import TextInput from '../TextInput';
 
-const Body = ({ type, answer, setAnswer }) => {
+const Body = ({ type, answer, setAnswer, options }) => {
   let InputComponent = null;
 
   if (type === 'select') {
@@ -13,7 +13,9 @@ const Body = ({ type, answer, setAnswer }) => {
     InputComponent = TextareaInput;
   }
 
-  return <InputComponent answer={answer} setAnswer={setAnswer} />;
+  return (
+    <InputComponent answer={answer} setAnswer={setAnswer} options={options} />
+  );
 };
 
 export default Body;
