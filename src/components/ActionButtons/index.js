@@ -1,10 +1,16 @@
 import { useNavigate } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 
+import useStep from '../../hooks/useStep';
+import questionsLengthState from '../../stores/questions/questionsLength';
 import Button from '../Button';
 
-const ActionButtons = ({ questionLength, step }) => {
+const ActionButtons = () => {
   const navigate = useNavigate();
+  const step = useStep();
+
+  const questionLength = useRecoilValue(questionsLengthState);
   const isLastStep = step === questionLength - 1;
 
   return (
