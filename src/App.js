@@ -11,10 +11,10 @@ function App() {
     <AppWrapper>
       <Box>
         <Routes>
-          <Route path="/survey/:surveyId/" element={<SurveyPage />}>
+          <Route path="/survey/:surveyId" element={<SurveyPage />}>
             <Route path=":step" />
           </Route>
-          <Route path="/done" element={<CompletionPage />} />
+          <Route path="/done/:surveyId" element={<CompletionPage />} />
         </Routes>
       </Box>
     </AppWrapper>
@@ -26,17 +26,19 @@ const AppWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e5e5e5;
+  background-color: #f5f5f5;
 `;
 
 const Box = styled.div`
-  background-color: #f0f0f0;
   width: 700px;
   min-height: 500px;
+  background: #ffffff;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.07);
   border-radius: 16px;
   padding: 60px;
   display: flex;
+  box-sizing: border-box;
+  position: relative;
 `;
 
 export default App;

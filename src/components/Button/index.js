@@ -10,13 +10,14 @@ const colorMap = {
 
 const Button = styled.button`
   padding: 16px 24px;
-  width: 200px;
+  min-width: 200px;
 
   color: ${({ type }) => colorMap[type].BUTTON.DEFAULT.COLOR};
   background: ${({ type }) => colorMap[type].BUTTON.DEFAULT.BACKGROUND};
   border-radius: 4px;
   border: none;
   font-weight: bold;
+  font-size: 18px;
   border: ${({ type }) =>
     type === 'TERTIARY'
       ? `1px solid ${TERTIARY.BUTTON.DEFAULT.BORDER}`
@@ -36,7 +37,7 @@ const Button = styled.button`
     background: ${({ type }) => colorMap[type].BUTTON.PRESSED.BACKGROUND};
     border: ${({ type }) =>
       type === 'TERTIARY'
-        ? `1px solid ${TERTIARY.BUTTON.ACTIVE.BORDER}`
+        ? `1px solid ${TERTIARY.BUTTON.PRESSED.BORDER}`
         : 'none'};
   }
 

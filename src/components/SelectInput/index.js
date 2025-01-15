@@ -5,6 +5,11 @@ const SelectInput = ({ answer, setAnswer, options }) => {
     const currentAnswer = Array.isArray(answer) ? answer : [];
 
     if (isChecked) {
+      const max = options?.max || 1;
+      if (currentAnswer.length >= max) {
+        return;
+      }
+
       setAnswer([...currentAnswer, index]);
     } else {
       setAnswer(currentAnswer.filter((item) => item !== index));
@@ -17,6 +22,7 @@ const SelectInput = ({ answer, setAnswer, options }) => {
         return (
           <Item
             key={index}
+            checked={answer?.includes(index)}
             onChange={(e) => {
               handleChange(e.target.checked, index);
             }}
@@ -35,11 +41,11 @@ const SelectInputWrapper = styled.div`
   gap: 24px;
 `;
 
-const Item = ({ children, onChange }) => {
+const Item = ({ children, checked, onChange }) => {
   return (
     <ItemWrapper>
       <label>
-        <input type="checkbox" onChange={onChange} />
+        <input type="checkbox" checked={checked} onChange={onChange} />
         <span />
         <div>{children}</div>
       </label>

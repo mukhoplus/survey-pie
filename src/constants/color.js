@@ -45,21 +45,21 @@ export const TERTIARY = {
     DEFAULT: {
       COLOR: '#6542F1',
       BACKGROUND: '#FFFFFF',
-      BORDER: 'F6542F1',
+      BORDER: '#6542F1',
     },
     HOVER: {
-      COLOR: '9982F4',
-      BACKGROUND: 'FFFFFF',
-      BORDER: '9982F4',
+      COLOR: '#9982F4',
+      BACKGROUND: '#FFFFFF',
+      BORDER: '#9982F4',
     },
     PRESSED: {
       COLOR: '#4B31B0',
-      BACKGROUND: 'F0EDFC',
-      BORDER: '4B31B0',
+      BACKGROUND: '#F0EDFC',
+      BORDER: '#4B31B0',
     },
     DISABLED: {
       COLOR: '#D0CDCD',
-      BACKGROUND: 'F6EDFC',
+      BACKGROUND: '#F6EDFC',
       BORDER: '#EDEDED',
     },
   },

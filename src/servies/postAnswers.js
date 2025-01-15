@@ -1,7 +1,7 @@
 import mainApi from './apis/mainInstance';
 
-function postAnswers(surveyId, data) {
-  mainApi.post('/answers', { surveyId, data });
+async function postAnswers(surveyId, data) {
+  return await mainApi.post('/answers', { surveyId, data });
 }
 
 export default postAnswers;
