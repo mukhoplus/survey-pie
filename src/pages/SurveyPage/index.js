@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -8,10 +9,12 @@ const SurveyPage = () => {
   const step = Number(useParams().step);
 
   return (
-    <SurveyPageWrapper className="App">
-      <ProgressIndicator step={step} />
-      <QuestionBox />
-    </SurveyPageWrapper>
+    <Suspense fallback={<div>Loading...</div>}>
+      <SurveyPageWrapper className="App">
+        <ProgressIndicator step={step} />
+        <QuestionBox />
+      </SurveyPageWrapper>
+    </Suspense>
   );
 };
 

@@ -2,10 +2,12 @@ import styled from 'styled-components';
 
 const SelectInput = ({ answer, setAnswer, options }) => {
   const handleChange = (isChecked, index) => {
+    const currentAnswer = Array.isArray(answer) ? answer : [];
+
     if (isChecked) {
-      setAnswer([...answer, index]);
+      setAnswer([...currentAnswer, index]);
     } else {
-      setAnswer(answer.filter((item) => item !== index));
+      setAnswer(currentAnswer.filter((item) => item !== index));
     }
   };
 

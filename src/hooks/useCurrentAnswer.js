@@ -18,7 +18,7 @@ function useCurrentAnswer() {
     });
   };
 
-  return { answer, setAnswer };
+  return [answer, setAnswer];
 }
 
 export default useCurrentAnswer;

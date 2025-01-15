@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const TextareaInput = ({ answer, setAnswer, options }) => {
+const TextareaInput = ({ answer = '', setAnswer, options }) => {
   return (
     <TextArea
       value={answer}
